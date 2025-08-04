@@ -1,0 +1,12 @@
+config:
+  target: "http://localhost:5000"
+  phases:
+    - duration: 30
+      arrivalRate: 10
+scenarios:
+  - name: "URL Shortener Load Test"
+    flow:
+      - post:
+          url: "/api/shorten"
+          json:
+            originalUrl: "https://example.com"
